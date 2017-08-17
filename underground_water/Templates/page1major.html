@@ -1,0 +1,95 @@
+<html>
+   <head>
+       <link rel="stylesheet" href="/static/angular-material.min.css">
+      <script src="/static/angular.min.js"></script>
+      <script src="/static/angular-animate.min.js"></script>
+      <script src="/static/angular-aria.min.js"></script>
+      <script src="/static/angular-messages.min.js"></script>
+      <script src="/static/angular-material.min.js"></script>
+      <link rel="stylesheet" href="/static/css.css">
+      <script type="text/javascript">    
+        angular.module('firstPage', ['ngMaterial'])
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .backgroundPalette('indigo',{
+        'default': '50'
+    });
+});
+      </script>
+      <title>MAJOR-1 | Underground water detection</title>
+	  <link rel="stylesheet" href="/static/icon.css">
+	  <link rel="stylesheet" href="/static/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/majorproject.css"/>
+      <script type="text/javascript" src="/static/jquery-2.1.1.min.js"></script>           
+      <script src="/static/materialize.min.js"></script> 
+   </head>
+   <body ng-app="firstPage"  ng-cloak>
+      <md-toolbar class="md-primary md-hue-1 md-toolbar style="60px"">
+         <div class="flexbox-parent">
+             <div layout="row" layout-align="center center">
+            <h1 class="md-flex md-display-3">UNDERGROUND  WATER  DETECTION</h1>
+             </div>
+         </div>
+      </md-toolbar>
+      <md-content layout-fill>
+          <div layout="row" layout-align="center center">
+        <h4 class="md-headline" style="padding-top:1em;">PLEASE ENTER THE PARAMETERS:</h4>
+          </div>
+         <section style="height:4em;">
+         </section>  
+         <form method="POST" action="/machine-learning-prediction">
+         {% csrf_token %}
+      <div class="row">
+         <form class="col s12">
+            <div class="row">
+               <div class="input-field col s3">      
+                  <label for="parameter1">Parameter 1</label>
+                  <input id="parameter1" type="text" placeholder="Parameter 1" class="validate" name="factor1" required>          
+               </div>
+               <div class="input-field col s3">      
+                  <label for="parameter2">Parameter 2</label>
+                  <input id="parameter2" type="text" placeholder="Parameter 2" class="validate" name="factor2" required>          
+               </div>
+               <div class="input-field col s3">      
+                  <label for="red">RED</label>
+                  <input id="red" type="text" placeholder="RED" class="validate" name="red" required>          
+               </div>
+               <div class="input-field col s3">      
+                  <label for="green">GREEN</label>
+                  <input id="green" type="text" placeholder="GREEN" class="validate" name="green" required>          
+               </div>
+               <div class="input-field col s3">      
+                  <label for="nir">NIR</label>
+                  <input id="nir" type="text" placeholder="NIR" class="validate" name="nir" required>          
+               </div>
+               <div class="input-field col s3">      
+                  <label for="mir">MIR</label>
+                  <input id="mir" type="text" placeholder="MIR" class="validate" name="mir" required>          
+               </div>
+               <div class="input-field col s3">      
+                  <label for="rs1">RS1</label>
+                  <input id="rs1" type="text" placeholder="RS1" class="validate" name="rs1" required>          
+               </div>
+               <div class="input-field col s3">      
+                  <label for="rs2">RS2</label>
+                  <input id="rs2" type="text" placeholder="RS2" class="validate" name="rs2" required>          
+               </div>
+                <div class="input-field col s3">      
+                  <label for="dem">DEM</label>
+                  <input id="dem" type="text" placeholder="DEM" class="validate" name="dem" required>          
+               </div>
+            </div>
+          <div style="display:flex; justify-content:center">
+        <input type="submit" value="PROCEED" class='ph-button ph-btn-red' style="
+    border: none;
+    background: transparent;
+">
+         <section>
+</div>    
+<div class="ph-clear"></div> 
+          </div>
+      </section>  
+</form>
+       </md-content>  
+   </body>   
+</html>
